@@ -54,6 +54,7 @@ function windowResized() {
 
 function mousePressed(){
  fullscreen(1);
+ audioCtx.resume();
  if (running == false){
   soundStart();
   setUpSoundGUI();
