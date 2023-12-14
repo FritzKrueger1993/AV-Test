@@ -28,6 +28,12 @@ let sineVol;
 let sineFreq;
 let noiseVol;
 
+let toggleX;
+let toggleY;
+let toggleWidth;
+let toggleHeight;
+let fs = 0;
+
 function setup() {
 createCanvas(windowWidth-compSize, windowHeight-compSize, P2D);
 createSliders();
@@ -50,18 +56,31 @@ function windowResized() {
   resizeCanvas(windowWidth-compSize, windowHeight-compSize);
   setUpLines();
   setUpSoundGUI();
+  
+  if(fullscreen() == null){
+    fs = 0;
+  }
+  
 }
 
 function mousePressed(){
- fullscreen(1);
+ 
  audioCtx.resume();
  if (running == false){
+  fullscreen(1);
+  fs = 1;
   soundStart();
   setUpSoundGUI();
+
  }
 
  running = true; 
-
+ 
+ if(mouseX >= toggleX && mouseX <= toggleX + toggleWidth && mouseY >= toggleY && mouseY <= toggleY + toggleHeight) {
+   fs = !fs;
+   fullscreen(fs);
+ }
+ 
 }
 function mouseReleased(){
 

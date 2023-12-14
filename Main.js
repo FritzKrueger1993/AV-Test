@@ -39,11 +39,26 @@ function main(){
   text("Frequency", soundGUIX + 24, soundGUIY + soundGUIHeight *0.5 + 25);
   text("Noise Mix", soundGUIX + 24 + soundGUIWidth * 0.5 , soundGUIY + 25);
   text("Panorama", soundGUIX + 24 + soundGUIWidth * 0.5 , soundGUIY + soundGUIHeight *0.5 + 25);
-  textAlign(RIGHT,CENTER);
-  text (sineVolDB + " dBFS", soundGUIX + 20 + soundGUIWidth * 0.4 , soundGUIY + 25);
-  text (int(sineFreq) + " Hz", soundGUIX + 20 + soundGUIWidth * 0.4 , soundGUIY + soundGUIHeight *0.5 + 25);
-  text (noiseVolDB + " dBFS", soundGUIX + 20 + soundGUIWidth * 0.9, soundGUIY + 25);
-  text (pan, soundGUIX + 20 + soundGUIWidth * 0.9, soundGUIY + soundGUIHeight *0.5 + 25);
+  text (sineVolDB + " dBFS", soundGUIX + 24, soundGUIY + 63);
+  text (int(sineFreq) + " Hz", soundGUIX + 24, soundGUIY + soundGUIHeight *0.5 + 63);
+  text (noiseVolDB + " dBFS", soundGUIX + 24 + soundGUIWidth * 0.5 , soundGUIY + 63);
+  text (pan, soundGUIX + 24 + soundGUIWidth * 0.5 , soundGUIY + soundGUIHeight *0.5 + 63);
+  
+  //-------------------- Toggle
+  
+  noStroke();
+  if(fs == true){
+    fill(255);
+  }
+  else{
+    fill(80);
+  }
+  rect(toggleX,toggleY,toggleWidth,toggleHeight);
+  fill(0);
+  textSize(12);
+  textAlign(CENTER,CENTER);
+  text("fs", toggleX + 0.5 * toggleWidth, toggleY + 0.5 * toggleHeight);
+  
   
   //-------------------- Frame  
   strokeWeight(10);

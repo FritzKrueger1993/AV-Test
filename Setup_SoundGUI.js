@@ -25,4 +25,11 @@ sliderNoiseVol.position(soundGUIX + soundGUIWidth * 0.5 + 20, soundGUIY + 33);
 sliderNoiseVol.size(soundGUIWidth * 0.4);
 sliderPan.position(soundGUIX + soundGUIWidth * 0.5 + 20, soundGUIY + soundGUIHeight *0.5 + 33);
 sliderPan.size(soundGUIWidth * 0.4);
+
+
+toggleX = width - 50;
+toggleY = 10;
+toggleWidth = 40;
+toggleHeight = 40;
+
 }
